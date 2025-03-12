@@ -1,0 +1,17 @@
+version: '3.3'
+services:
+  database:
+    image: mysql:5.7
+    container_name: hr-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'hr_db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'p@ssw0rd'
+      MYSQL_ROOT_PASSWORD: 'p@ssw0rd'
+      MYSQL_INITDB_SKIP_TZINFO: 'false'
+      TZ: 'Asia/Vientiane'
+    ports:
+      - '3308:3306'
+    volumes:
+      - ./test_db:/home/simple_app
